@@ -12,10 +12,12 @@ export default function TodoApp() {
       completed: false,
       date: new Date().toLocaleString(),
     };
+
+    
     setTasks([...tasks, newTask]);
     setTaskInput("");
   };
-  
+
 
   const toggleComplete = (id) => {
     setTasks(
