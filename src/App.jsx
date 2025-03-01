@@ -7,13 +7,15 @@ export default function TodoApp() {
   const addTask = () => {
     if (taskInput.trim() === "") return;
     const newTask = {
+
+      
       id: Date.now(),
       text: taskInput,
       completed: false,
       date: new Date().toLocaleString(),
     };
 
-    
+
     setTasks([...tasks, newTask]);
     setTaskInput("");
   };
