@@ -6,9 +6,13 @@ export default function TodoApp() {
 
   const addTask = () => {
     if (taskInput.trim() === "") return;
+
+
     const newTask = {
 
-      
+
+
+
       id: Date.now(),
       text: taskInput,
       completed: false,
@@ -41,7 +45,7 @@ export default function TodoApp() {
           type="text"
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
-          placeholder="Enter a task"
+          placeholder="Enter a written task"
           className="border p-2 w-full"
         />
         <button onClick={addTask} className="bg-blue-500 text-white p-2 mt-2 w-full">
