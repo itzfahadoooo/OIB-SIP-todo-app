@@ -122,3 +122,52 @@
   .delete-button:hover {
     background-color: #c82333;
   }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .cont1 {
+      width: 95%;
+      padding: 10px;
+    }
+  
+    .todo-input {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .todo-input input {
+      width: 100%;
+    }
+  
+    .add-button {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .task-table th,
+    .task-table td {
+      padding: 5px;
+    }
+  
+    .complete-button,
+    .delete-button {
+      padding: 5px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .todo-title {
+      font-size: 20px;
+    }
+  
+    .task-header {
+      font-size: 18px;
+    }
+  
+    .complete-button,
+    .delete-button {
+      padding: 3px;
+      font-size: 12px;
+    }
+  }
