@@ -164,6 +164,11 @@
     .task-header {
       font-size: 18px;
     }
+
+    .task-table th,
+    .task-table td {
+      padding: 3px;
+    }
   
     .complete-button,
     .delete-button {
