@@ -3,18 +3,21 @@ import "./App.css";
 
 export default function TodoApp() {
   const [tasks, setTasks] = useState([]);
-  const [taskInput, setTaskInput] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const addTask = () => {
-    if (taskInput.trim() === "") return;
+    if (title.trim() === "" || description.trim() === "") return;
     const newTask = {
       id: Date.now(),
-      text: taskInput,
+      title,
+      description,
       completed: false,
       date: new Date().toLocaleString(),
     };
     setTasks([...tasks, newTask]);
-    setTaskInput("");
+    setTitle("");
+    setDescription("");
   };
 
   const toggleComplete = (id) => {
@@ -36,9 +39,15 @@ export default function TodoApp() {
         <div className="todo-input">
           <input
             type="text"
-            value={taskInput}
-            onChange={(e) => setTaskInput(e.target.value)}
-            placeholder="Enter a task"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Task Title"
+          />
+          <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Task Description"
           />
           <button onClick={addTask} className="add-button">
             Add Task
@@ -46,46 +55,72 @@ export default function TodoApp() {
         </div>
 
         <h2 className="task-header">Pending Tasks</h2>
-        {tasks
-          .filter((task) => !task.completed)
-          .map((task) => (
-            <div key={task.id} className="task-item pending">
-              <span>
-                {task.text} <small>({task.date})</small>
-              </span>
-              <div>
-                <button
-                  onClick={() => toggleComplete(task.id)}
-                  className="complete-button"
-                >
-                  Complete
-                </button>
-                <button
-                  onClick={() => deleteTask(task.id)}
-                  className="delete-button"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
+        <table className="task-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tasks
+              .filter((task) => !task.completed)
+              .map((task) => (
+                <tr key={task.id} className="task-item pending">
+                  <td>{task.title}</td>
+                  <td>{task.description}</td>
+                  <td>{task.date}</td>
+                  <td>
+                    <button
+                      onClick={() => toggleComplete(task.id)}
+                      className="complete-button"
+                    >
+                      Complete
+                    </button>
+                    <button
+                      onClick={() => deleteTask(task.id)}
+                      className="delete-button"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
 
         <h2 className="task-header">Completed Tasks</h2>
-        {tasks
-          .filter((task) => task.completed)
-          .map((task) => (
-            <div key={task.id} className="task-item completed">
-              <span className="completed-text">
-                {task.text} <small>({task.date})</small>
-              </span>
-              <button
-                onClick={() => deleteTask(task.id)}
-                className="delete-button"
-              >
-                Delete
-              </button>
-            </div>
-          ))}
+        <table className="task-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tasks
+              .filter((task) => task.completed)
+              .map((task) => (
+                <tr key={task.id} className="task-item completed">
+                  <td className="completed-text">{task.title}</td>
+                  <td className="completed-text">{task.description}</td>
+                  <td className="completed-text">{task.date}</td>
+                  <td>
+                    <button
+                      onClick={() => deleteTask(task.id)}
+                      className="delete-button"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
