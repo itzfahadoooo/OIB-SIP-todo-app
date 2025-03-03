@@ -40,9 +40,18 @@ export default function TodoApp() {
   return (
     <div className="container mx-auto p-4 max-w-md">
       <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
+
+
+
       <div className="mb-4">
+
+
+
         <input
           type="text"
+
+
+          
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
           placeholder="Enter a written task"
