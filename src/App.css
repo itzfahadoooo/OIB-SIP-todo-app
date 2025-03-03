@@ -1,0 +1,113 @@
+.todo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.cont1 {
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+    background-color: #a6cbf0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todo-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+  }
+  
+  .todo-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .todo-input input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .add-button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Task headers */
+  .task-header {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Task item styling */
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pending {
+    border-left: 5px solid #ffc107;
+  }
+  
+  .completed {
+    border-left: 5px solid #28a745;
+    text-decoration: line-through;
+  }
+  
+  /* Task text */
+  .completed-text {
+    color: gray;
+  }
+  
+  /* Buttons inside tasks */
+  .complete-button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .complete-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
