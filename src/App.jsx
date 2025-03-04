@@ -27,10 +27,13 @@ export default function TodoApp() {
       date: new Date().toLocaleString(),
     };
     setTasks([...tasks, newTask]);
+
+
+    
     setTitle("");
     setDescription("");
 
-    
+
   };
 
   const toggleComplete = (id) => {
