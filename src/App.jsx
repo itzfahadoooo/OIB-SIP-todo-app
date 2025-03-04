@@ -5,12 +5,16 @@ export default function TodoApp() {
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
+
+
   });
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+
+
   }, [tasks]);
 
   const addTask = () => {
@@ -25,6 +29,8 @@ export default function TodoApp() {
     setTasks([...tasks, newTask]);
     setTitle("");
     setDescription("");
+
+    
   };
 
   const toggleComplete = (id) => {
