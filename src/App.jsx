@@ -64,14 +64,19 @@ export default function TodoApp() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Task Description"
+
           />
           <button onClick={addTask} className="add-button">
+
             Add Task
           </button>
         </div>
 
+
         <h2 className="task-header">Pending Tasks</h2>
+ 
         <table className="task-table">
+ 
           <thead>
             <tr>
               <th>Title</th>
