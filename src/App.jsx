@@ -80,10 +80,14 @@ export default function TodoApp() {
           <thead>
             <tr>
               <th>Title</th>
+
               <th>Description</th>
+              
               <th>Date</th>
+              
               <th>Actions</th>
             </tr>
+          
           </thead>
           <tbody>
             {tasks
