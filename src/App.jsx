@@ -86,6 +86,8 @@ export default function TodoApp() {
               <th>Date</th>
               
               <th>Actions</th>
+
+              
             </tr>
           
           </thead>
