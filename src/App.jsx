@@ -5,16 +5,12 @@ export default function TodoApp() {
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
-
-
   });
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-
-
   }, [tasks]);
 
   const addTask = () => {
@@ -28,12 +24,8 @@ export default function TodoApp() {
     };
     setTasks([...tasks, newTask]);
 
-
-    
     setTitle("");
     setDescription("");
-
-
   };
 
   const toggleComplete = (id) => {
@@ -64,32 +56,25 @@ export default function TodoApp() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Task Description"
-
           />
           <button onClick={addTask} className="add-button">
-
             Add Task
           </button>
         </div>
 
-
         <h2 className="task-header">Pending Tasks</h2>
- 
+
         <table className="task-table">
- 
           <thead>
             <tr>
               <th>Title</th>
 
               <th>Description</th>
-              
-              <th>Date</th>
-              
-              <th>Actions</th>
 
-              
+              <th>Date</th>
+
+              <th>Actions</th>
             </tr>
-          
           </thead>
           <tbody>
             {tasks
