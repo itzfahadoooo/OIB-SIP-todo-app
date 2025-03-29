@@ -79,6 +79,7 @@ export default function TodoApp() {
           <tbody>
             {tasks
               .filter((task) => !task.completed)
+              
               .map((task) => (
                 <tr key={task.id} className="task-item pending">
                   <td>{task.title}</td>
